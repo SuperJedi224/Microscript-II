@@ -1,4 +1,4 @@
-# Microscript II
+﻿# Microscript II
 
 Originally published November 7, 2015
 
@@ -118,6 +118,12 @@ t                                Get the ID of the type of x, and store it in x.
 x                                Halt execution of current code block.
 h                                Halt execution of program.
 ;                                If x is a positive integer, set x to true if it is prime or false otherwise; else, throw an exception.
+-⁵                               Dependent on type of x and an object o popped off the selected stack.
+                                   -If both are INTs, find x-o as an INT and store it in x.
+                                   -If one is a FLOAT and the other is an INT, or both are floats, find x-o as a FLOAT and store it in x.
+                                   -If both are STRINGs, remove all instances of o from x and store the result in x.
+                                   -If both are BOOLEANs, xor them and store the result in x.
+                                   -Otherwiswe, throw an exception.
 ```
 
 ¹false, null, the empty string, an empty queue, and 0 (as an INT or a FLOAT) all become false. Anything else becomes true.
@@ -128,3 +134,4 @@ h                                Halt execution of program.
 
 ⁴Situations higher on this list have precedence over situations lower on it
 
+⁵Only when not part of a number literal

@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class MicroscriptII{
+public class MicroscriptII {
 	static boolean isPrime(long n) {
 	    if(n < 2) return false;
 	    if(n == 2 || n == 3)return true;
@@ -228,6 +228,7 @@ public class MicroscriptII{
 			}
 			if(code.charAt(i)=='-'){
 				int j=i;
+				if(i<code.length()-1&&Character.isDigit(code.charAt(i+1))){
 				for(i++;i<code.length()&&"0123456789".indexOf(""+code.charAt(i))!=-1;i++){}
 				if(code.charAt(i)=='.'){
 					for(i++;i<code.length()&&"0123456789".indexOf(""+code.charAt(i))!=-1;i++){}
@@ -235,7 +236,24 @@ public class MicroscriptII{
 				}else{
 					x=-Long.parseLong(i>j?code.substring(j,i):"0");
 				}
-				i--;
+				i--;}else{
+					Object o=stack.get(stackId).pop();
+					if(x instanceof Long&&o instanceof Long){
+						x=(long)x-(long)o;
+					}else if(x instanceof Long&&o instanceof Double){
+						x=(long)x-(double)o;
+					}else if(x instanceof Double&&o instanceof Long){
+						x=(double)x-(long)o;
+					}else if(x instanceof Double&&o instanceof Double){
+						x=(double)x-(double)o;
+					}else if(x instanceof String&&o instanceof String){
+						x=((String)x).replaceAll(Pattern.quote((String)o),"");
+					}else if(x instanceof Boolean && o instanceof Boolean){
+						x=(boolean)x^(boolean)o;
+					}else{
+						throw new IllegalArgumentException();
+					}
+				}
 				continue;
 			}
 			if(code.charAt(i)=='"'){

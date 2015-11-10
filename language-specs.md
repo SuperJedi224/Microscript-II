@@ -1,4 +1,5 @@
 **Memory Structure**
+
 The language's memory structure consists of two variables (here called `x` and `y`), three primary stacks (arranged in a wrapping ring, of which one will be selected at any time), and an additional limited-access stack which may only contain `CONTINUATION` objects.
 
 **Types**

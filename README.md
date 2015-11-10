@@ -134,10 +134,11 @@ h                                Halt execution of program.
 
 ⁴Situations higher on this list have precedence over situations lower on it
 
-<<<<<<< HEAD
 ⁵Only when not part of a number literal
-=======
+
+---
+
 ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License.](http://creativecommons.org/licenses/by-sa/4.0/)
->>>>>>> origin/master
+

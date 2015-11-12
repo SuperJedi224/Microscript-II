@@ -129,6 +129,10 @@ h                                Halt execution of program.
                                    -If both are STRINGs, remove all instances of o from x and store the result in x.
                                    -If both are BOOLEANs, xor them and store the result in x.
                                    -Otherwiswe, throw an exception.
+%                                Dependent on the types of x and an object o popped off the selected stack.
+                                   -If both are INTs, find x (mod o) as an INT and store it in x.
+                                   -If one is a FLOAT and the other is an INT, or both are floats, find x (mod o) as a FLOAT and store it in x.
+                                   -Otherwise, throw an exception.
 ```
 
 ¹false, null, the empty string, an empty queue, and 0 (as an INT or a FLOAT) all become false. Anything else becomes true.

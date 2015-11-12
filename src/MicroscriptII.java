@@ -658,6 +658,20 @@ public class MicroscriptII {
 					throw new IllegalArgumentException();
 				}
 			}
+			if(code.charAt(i)=='%'){
+				Object o=stack.get(stackId).pop();
+				if(x instanceof Long&&o instanceof Long){
+					x=(long)x%(long)o;
+				}else if(x instanceof Long&&o instanceof Double){
+					x=(long)x%(double)o;
+				}else if(x instanceof Double&&o instanceof Long){
+					x=(double)x%(long)o;
+				}else if(x instanceof Double&&o instanceof Double){
+					x=(double)x%(double)o;
+				}else{
+					throw new IllegalArgumentException();
+				}
+			}
 			if(code.charAt(i)=='t'){
 				x=x==null?-1:types.indexOf(x.getClass());
 			}

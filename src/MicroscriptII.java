@@ -208,6 +208,7 @@ public class MicroscriptII {
 		return true;
 		
 	}
+	@SuppressWarnings("unchecked")
 	static void run(String code){
 		for(int i=0;i<code.length();i++){
 			if(code.charAt(i)=='\''){
@@ -689,6 +690,19 @@ public class MicroscriptII {
 					x=Math.random()*(double)x;
 				}else{
 					x=Math.random();
+				}
+			}
+			if(code.charAt(i)=='K'){
+				if(x instanceof String){
+					String u=(String)x;
+					@SuppressWarnings("rawtypes")
+					Stack v=new Stack();
+					for(char a:u.toCharArray())v.push(a);
+					while(!v.isEmpty())stack.get(stackId).push(v.pop());
+				}else if(x instanceof Long){
+					x=String.valueOf((char)(long)x);
+				}else{
+					throw new IllegalArgumentException();
 				}
 			}
 		}

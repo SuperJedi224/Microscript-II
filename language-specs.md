@@ -1,4 +1,4 @@
-**Memory Structure**
+﻿**Memory Structure**
 
 The language's memory structure consists of two variables (here called `x` and `y`), three primary stacks (arranged in a wrapping ring, of which one will be selected at any time), and an additional limited-access stack which may only contain `CONTINUATION` objects.
 
@@ -132,6 +132,10 @@ h                                Halt execution of program.
 %                                Dependent on the types of x and an object o popped off the selected stack.
                                    -If both are INTs, find x (mod o) as an INT and store it in x.
                                    -If one is a FLOAT and the other is an INT, or both are floats, find x (mod o) as a FLOAT and store it in x.
+                                   -Otherwise, throw an exception.
+K                                Dependent on the type of x:
+                                   -If x is a STRING, push the codepoints of its characters to the stack (putting the first character on top.)
+                                   -If x is an INT, create a string containing the character at that codepoint and store it in x.
                                    -Otherwise, throw an exception.
 ```
 

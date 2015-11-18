@@ -294,7 +294,7 @@ public class MicroscriptII {
 					if(i==code.length())return;
 					if(code.charAt(i)=='(')j++;
 					if(code.charAt(i)==')')j--;
-					if(code.charAt(i)=='"'){
+					if(code.charAt(i)=='"'&&code.charAt(i-1)!='\''){
 						boolean b=false;
 						while(true){
 							i++;
@@ -328,7 +328,7 @@ public class MicroscriptII {
 					}
 					if(code.charAt(i)=='[')j++;
 					if(code.charAt(i)==']')j--;
-					if(code.charAt(i)=='"'){
+					if(code.charAt(i)=='"'&&code.charAt(i-1)!='\''){
 						if(i==code.length()){
 							break t;
 						}

@@ -472,7 +472,7 @@ public class MicroscriptII {
 				}else if(x instanceof Double){
 					x=(long)(double)x;
 				}else if(x instanceof Boolean){
-					x=(boolean)x?1:0;
+					x=(boolean)x?1L:0L;
 				}else{
 					throw new IllegalArgumentException();
 				}			
@@ -549,7 +549,7 @@ public class MicroscriptII {
 				return;
 			}
 			if(code.charAt(i)=='#'){
-				x=stack.get(stackId).size();
+				x=(long)stack.get(stackId).size();
 			}
 			if(code.charAt(i)=='$'){
 				x=new Queue();
@@ -599,7 +599,7 @@ public class MicroscriptII {
 				}else if(o instanceof String){
 					x=x+(String)o;
 				}else{
-					throw new IllegalArgumentException();
+					throw new IllegalArgumentException(x.getClass()+" "+o.getClass());
 				}
 			}
 			if(code.charAt(i)=='*'){
@@ -697,12 +697,12 @@ public class MicroscriptII {
 					String u=(String)x;
 					@SuppressWarnings("rawtypes")
 					Stack v=new Stack();
-					for(char a:u.toCharArray())v.push(a);
+					for(char a:u.toCharArray())v.push((long)a);
 					while(!v.isEmpty())stack.get(stackId).push(v.pop());
 				}else if(x instanceof Long){
 					x=String.valueOf((char)(long)x);
 				}else{
-					throw new IllegalArgumentException();
+					throw new IllegalArgumentException(x.getClass().getName());
 				}
 			}
 		}

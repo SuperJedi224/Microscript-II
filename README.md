@@ -1,8 +1,10 @@
-﻿# Microscript II
+# Microscript II
 
 Originally published November 7, 2015
 
 Relocated from Pastebin November 8, 2015
+
+---
 
 Microscript II is a dynamically-typed successor to Microscript, one of my earlier programming language designs.
 

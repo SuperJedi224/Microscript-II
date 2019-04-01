@@ -598,7 +598,7 @@ public class MicroscriptII {
 					x=new Code(((Code)x).c+o);
 				}else if(o instanceof String){
 					x=x+(String)o;
-				}else{
+				}else if(o!=null){
 					throw new IllegalArgumentException(x.getClass()+" "+o.getClass());
 				}
 			}

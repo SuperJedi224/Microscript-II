@@ -686,7 +686,7 @@ public class MicroscriptII {
 			if(code.charAt(i)=='R'){
 				if(x instanceof Long){
 					x=(long)(Math.random()*(long)x);
-				}if(x instanceof Double){
+				}else if(x instanceof Double){
 					x=Math.random()*(double)x;
 				}else{
 					x=Math.random();

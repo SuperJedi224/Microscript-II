@@ -473,6 +473,8 @@ public class MicroscriptII {
 					x=(long)(double)x;
 				}else if(x instanceof Boolean){
 					x=(boolean)x?1L:0L;
+				}else if(x instanceof Long){
+					//Do nothing
 				}else{
 					throw new IllegalArgumentException();
 				}			

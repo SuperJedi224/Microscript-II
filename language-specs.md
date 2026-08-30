@@ -60,6 +60,7 @@ _                                Dependent on the type of x:
                                   -If x is a STRING, parse it as an INT and store the result to x.
                                   -If x is a FLOAT, truncate it to an INT and store the result to x.
                                   -If x is a BOOLEAN, convert it to an INT (true=1,false=0) and store the result to x.
+                                  -If x is an INT, do nothing.
                                   -Otherwise, throw an exception.
 @                                Dependent on the type of x:
                                   -If x is an INT or a FLOAT, take its square root as a FLOAT and store it in x.

@@ -93,7 +93,7 @@ L                                Dependent on the type of x:
                                   -If x is null, set x to the popped object.
                                   -If both are INTs, sum them as an INT and store the result in x.
                                   -If both are BOOLEANs, OR them and store the result in x.
-                                  -If one is an INT and the other is a FLOAT; or if both are FLOATs, sum them as a FLOAT and store the result in x.
+                                  -If one is an INT and the other is a FLOAT, or if both are FLOATs, sum them as a FLOAT and store the result in x.
                                   -If one is an INT and the other is a BOOLEAN, convert the boolean to an INT (true=1,false=0), sum them, and store the result in x. 
                                   -If x is a QUEUE, add the popped object to the end of it.
                                   -If x is a STRING, append a string representation of the popped object and store the result in x.
@@ -104,7 +104,7 @@ L                                Dependent on the type of x:
 *                                Dependent on the types of x and a value popped off the stack⁴:
                                   -If both are INTs, find their product as an INT and store the result in x.
                                   -If both are BOOLEANs, AND them and store the result in x.
-                                  -If one is an INT and the other is a FLOAT; or if both are FLOATs, find their product as a FLOAT and store the result in x. 
+                                  -If one is an INT and the other is a FLOAT, or if both are FLOATs, find their product as a FLOAT and store the result in x. 
                                   -If one is an INT and the other is a STRING, repeat the string that many times and store the result in x. 
                                   -If one is an INT and the other is a code block, execute the code block that many times
                                   -If one is an INT and the other is a queue, merge that many copies of the queue and store the result in x.
@@ -126,17 +126,17 @@ h                                Halt execution of program.
 ;                                If x is a positive integer, set x to true if it is prime or false otherwise; else, throw an exception.
 -⁵                               Dependent on type of x and an object o popped off the selected stack.
                                    -If both are INTs, find x-o as an INT and store it in x.
-                                   -If one is a FLOAT and the other is an INT, or both are floats, find x-o as a FLOAT and store it in x.
+                                   -If one is an INT and the other is a FLOAT, or both are FLOATs, find x-o as a FLOAT and store it in x.
                                    -If both are STRINGs, remove all instances of o from x and store the result in x.
                                    -If both are BOOLEANs, xor them and store the result in x.
                                    -Otherwiswe, throw an exception.
 %                                Dependent on the types of x and an object o popped off the selected stack.
                                    -If both are INTs, find x (mod o) as an INT and store it in x.
-                                   -If one is a FLOAT and the other is an INT, or both are floats, find x (mod o) as a FLOAT and store it in x.
+                                   -If one is an INT and the other is a FLOAT, or both are FLOATs, find x (mod o) as a FLOAT and store it in x.
                                    -Otherwise, throw an exception.
 /                                Dependent on the types of x and an object o popped off the selected stack.
                                    -If both are INTs, find x/o as an INT and store it in x.
-                                   -If one is a FLOAT and the other is an INT, or both are floats, find x/o as a FLOAT and store it in x.
+                                   -If one is an INT and the other is a FLOAT, or both are FLOATs, find x/o as a FLOAT and store it in x.
                                    -Otherwise, throw an exception.
 K                                Dependent on the type of x:
                                    -If x is a STRING, push the codepoints of its characters to the stack (putting the first character on top.)

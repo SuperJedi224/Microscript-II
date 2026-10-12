@@ -73,6 +73,7 @@ R                                Dependent on the type of x:
 >                                Select the stack to the right (stack selection is wrapping)
 ?                                Convert x to a BOOLEAN and store the result in x.
 !                                Convert x to a BOOLEAN, negate it, and store the result in x.
+S                                Convert x to a STRING and store the result in x.
 I                                Read a line from the input and store it to x.
 N                                Read a line from the input, parse it as an INT, and store to x.
 F                                Read a line from the input, parse it as a FLOAT, and store to x.

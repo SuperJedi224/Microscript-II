@@ -708,6 +708,9 @@ public class MicroscriptII {
 					x=Math.random();
 				}
 			}
+			if(code.charAt(i)=='S') {
+				x=String.valueOf(x);
+			}
 			if(code.charAt(i)=='K'){
 				if(x instanceof String){
 					String u=(String)x;
